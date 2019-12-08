@@ -3,7 +3,7 @@
 <img src='https://www.ssactivewear.com/'/>
 
 
-
+key={garment.colorFrontImage}
 
 
 
