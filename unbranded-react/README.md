@@ -6,10 +6,13 @@
 key={garment.colorFrontImage}
 
 
+								<Button animated>
+								    <Button.Content visible>Details</Button.Content>
+								    <Button.Content hidden><Icon name='rocket' /></Button.Content>
+								</Button>
 
 
-
-
+Garments garments={garments} />
 
 
 
