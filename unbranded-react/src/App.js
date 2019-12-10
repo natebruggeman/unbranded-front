@@ -27,7 +27,11 @@ class App extends Component {
 
 
     this.state = {
-      garments: []
+      garments: [],
+      ashList: null,
+      maroonList: null,
+      greenList: null
+
     }
   }
   getGarments = async () => {
@@ -35,9 +39,34 @@ class App extends Component {
     try {
       const garments = await fetch('http://localhost:8000/list');
       const garmentsJson = await garments.json();
-      console.log(garmentsJson);
+      
+
+      const ashList = garmentsJson.filter(function(garment) {
+        if(garment.colorName === 'Ash'){
+          return true;
+        }
+      })
+
+
+      const maroonList = garmentsJson.filter(function(garment) {
+        if(garment.colorName === 'Maroon'){
+          return true;
+        }
+      })  
+
+
+
+      const greenList = garmentsJson.filter(function(garment) {
+        if(garment.colorName === 'Military Green'){
+          return true;
+        }
+      })  
+
       this.setState({
-        garments:garmentsJson
+        garments:garmentsJson,
+        ashList: ashList,
+        maroonList: maroonList,
+        greenList: greenList
       })
     } catch (err) {
       console.log(err, 'error in catch block')
@@ -52,7 +81,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GarmentsList garments={this.state.garments}/>
+        {this.state.garments.length > 0
+          ?
+          <GarmentsList garments={this.state.garments}
+                        ashList={this.state.ashList}
+                        maroonList={this.state.maroonList}
+                        greenList={this.state.greenList} />
+          :
+          null
+        }
+      }
       </div>
     );
   }
