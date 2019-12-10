@@ -14,7 +14,10 @@ key={garment.colorFrontImage}
 
 Garments garments={garments} />
 
-
+	<HelloContainer
+		name={"Nateybaby"} 
+		age = {25}
+	/>,
 
 
 

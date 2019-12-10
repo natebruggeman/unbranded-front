@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/*.trainlist-li-delayed {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.trainlist-li-onTime {
+  text-decoration: none;
+}
+*/
