@@ -7,15 +7,18 @@ import { Card, List, Button, i, Grid, Icon, Dropdown, Form } from "semantic-ui-r
 class GarmentItem extends Component {
 
 	render(){
+		// destructoring to grab id, gtin, sizeName etc.
+		const { gtin, sizeName, piecePrice } = this.props.garment 
 		console.log(this.props)
 		return (
 			<div style={itemStyle}> 
 				<br/>
 				<Card>
+					{/* can use this.props.garment or destructored constants */}
 					{this.props.garment.sizeName}<hr/>
-					{this.props.garment.gtin} 
+					{gtin} 
 					<Button 
-						onClick={this.props.addToCart} //climbing the ladder
+						onClick={this.props.addToCart.bind(this, gtin, sizeName, piecePrice)} //climbing the ladder
 						value="add to cart"
 						animated='fade'
 						>

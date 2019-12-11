@@ -8,10 +8,6 @@ import PropTypes from 'prop-types';
 
 class Garments extends Component {
 
-	// addToCart = () => {
-	// 	console.log('Wassup Bitch')
-	// }
-
 	render(){
 
 		console.log(this.props.garments)
@@ -30,6 +26,15 @@ class Garments extends Component {
 Garments.propTypes = {
 	garments: PropTypes.array.isRequired
 }
+
+
+
+
+
+
+
+
+
 	// const garments = props.garments
 	// console.log(garments)
 

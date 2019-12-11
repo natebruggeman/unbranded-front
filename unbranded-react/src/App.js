@@ -29,9 +29,7 @@ class App extends Component {
 
     this.state = {
       garments: [],
-      ashList: null,
-      maroonList: null,
-      greenList: null
+      cart: []
 
     }
   }
@@ -60,10 +58,12 @@ class App extends Component {
     this.getGarments()
   }
 
-  addToCart = () => {
-    console.log('From GarmentItem')
+  addToCart = (gtin, sizeName) => {
+    // console.log([gtin, sizeName])
+    this.state.cart.push({'identifer': gtin, 'qty': 1} )
+    console.log(this.state.cart);
   }
-
+  // console.log(this.state.cart);
   render() {
     return (
       <div>
