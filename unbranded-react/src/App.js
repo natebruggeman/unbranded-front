@@ -4,7 +4,8 @@ import './App.css';
 // import {Garments} from "./Compenents/Garments"
 // import {AddToCart} from "./Compenents/AddToCart"
 // import { Container } from "semantic-ui-react"
-import GarmentsList from "./Components/GarmentsList"
+import Garments from "./Components/Garments"
+import Header from "./Components/Header"
 
 
 // function App() {
@@ -41,32 +42,12 @@ class App extends Component {
       const garmentsJson = await garments.json();
       
 
-      const ashList = garmentsJson.filter(function(garment) {
-        if(garment.colorName === 'Ash'){
-          return true;
-        }
-      })
-
-
-      const maroonList = garmentsJson.filter(function(garment) {
-        if(garment.colorName === 'Maroon'){
-          return true;
-        }
-      })  
-
-
-
-      const greenList = garmentsJson.filter(function(garment) {
-        if(garment.colorName === 'Military Green'){
-          return true;
-        }
-      })  
 
       this.setState({
         garments:garmentsJson,
-        ashList: ashList,
-        maroonList: maroonList,
-        greenList: greenList
+        // ashList: ashList,
+        // maroonList: maroonList,
+        // greenList: greenList
       })
     } catch (err) {
       console.log(err, 'error in catch block')
@@ -78,25 +59,64 @@ class App extends Component {
   componentDidMount(){
     this.getGarments()
   }
+
+  addToCart = () => {
+    console.log('From GarmentItem')
+  }
+
   render() {
     return (
       <div>
+        <Header />
         {this.state.garments.length > 0
           ?
-          <GarmentsList garments={this.state.garments}
-                        ashList={this.state.ashList}
-                        maroonList={this.state.maroonList}
-                        greenList={this.state.greenList} />
+          <Garments 
+            garments={this.state.garments} 
+            addToCart={this.addToCart}
+          />
           :
           null
         }
-      }
+      
       </div>
     );
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+      // const ashList = garmentsJson.filter(function(garment) {
+      //   if(garment.colorName === 'Ash'){
+      //     return true;
+      //   }
+      // })
+
+
+      // const maroonList = garmentsJson.filter(function(garment) {
+      //   if(garment.colorName === 'Maroon'){
+      //     return true;
+      //   }
+      // })  
+
+
+
+      // const greenList = garmentsJson.filter(function(garment) {
+      //   if(garment.colorName === 'Military Green'){
+      //     return true;
+      //   }
+      // })  
+
+
+
+
 
 
 // class GarmentList extends Component {
