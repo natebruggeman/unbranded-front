@@ -5,7 +5,6 @@ import { Card, Button, Grid, Icon, Form, } from "semantic-ui-react"
 
 
 class GarmentItem extends Component {
-
 	render(){
 		// destructoring to grab id, gtin, sizeName etc.
 		const { gtin, sizeName, piecePrice, colorName } = this.props.garment 
@@ -15,6 +14,7 @@ class GarmentItem extends Component {
 				<br/>
 				<Card>
 					{/* can use this.props.garment or destructored constants */}
+					
 					{colorName}<br/>
 					{this.props.garment.sizeName}<hr/>
 					${Math.round(piecePrice) * 2}.00<br/>
@@ -49,13 +49,6 @@ const itemStyle = {
 
 
 
-
-
-
-
-
-
-
 GarmentItem.propTypes = {
 	garment: PropTypes.object.isRequired
 }
@@ -63,13 +56,3 @@ GarmentItem.propTypes = {
 
 export default GarmentItem
 
-
-// import React, {Component} from 'react';
-
-// class GarmentItem extends Component {
-// 	render(){
-// 		return (
-// 			<div> </div>
-// 		)
-// 	}
-// }

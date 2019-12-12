@@ -13,10 +13,10 @@ class ShowCart extends Component {
 					item= {item} //passing
 					deleteItem = {this.props.deleteItem}// lifting from showCartItem
 				/>
-				<EditCartQty 
-					item = {item} //passing
-					editCartQty = {this.props.editCartQty} // lifting from EditCart
-				/>
+				{/*<EditCartQty  
+				 	item = {item} //passing
+				 	editCartQty = {this.props.editCartQty} // lifting from EditCart
+				 />*/}
 			</React.Fragment>	
 
 		))

@@ -14,13 +14,22 @@ class EditCartQty extends Component {
 			// console.log(parsedCartLocal)
 			// console.log(this.props.item.identifier)
 			let cartLocal = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier === this.props.item.identifier)
-			// console.log(cartLocal);
-			const poppedCart = cartLocal.pop();
-			poppedCart.qty = this.state.value
-			console.log(poppedCart.qty)
-			console.log(poppedCart)
+			console.log(cartLocal)
+			console.log('~~~~~~~~~~~~~~')
 
+			// pop it out of it's array
+			const poppedCart = cartLocal.pop();
+			// put qty as value
+			poppedCart.qty = this.state.value
+			
 			const updatedCart= [] 
+			updatedCart.push(poppedCart)
+			cartLocal.push(updatedCart)
+			console.log(cartLocal)
+			
+			// localStorage.setItem('cartLocal', JSON.stringify(cartLocal))
+			
+
 
 		}
 			
@@ -32,7 +41,7 @@ class EditCartQty extends Component {
 					<Form>
 						<Input
 							type="text"
-							placeholder="1"
+							placeholder={this.state.value}
 							style={{width: "60px"}}
 							// onChange = {this.onChange}
 							value= {this.state.value}
