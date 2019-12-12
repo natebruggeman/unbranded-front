@@ -15,7 +15,7 @@ import EditCartQty from "./Components/EditCartQty"
 class App extends Component {
   constructor(){
     super();
-    //storing cart in client not in DB!! 
+    //storing cart in local storage not in DB 
     let totalCart = localStorage.getItem('cartLocal')
     console.log(totalCart)
     if (totalCart == null){
@@ -58,22 +58,39 @@ class App extends Component {
                           'size': sizeName,
                           'color': colorName,
                           'price': piecePrice,
-                           'qty': 1} )
+                           'qty': "1"} )
+    //this is the start of cartLocal
     //local storage turns everything into an object. You have to stringify.
     localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
   }
 
-  editCartQty = () => {
-    console.log('sup baby')
-  }
+  // editing quantity in cart 
+  // editCartQty = (identifier) => {
+  //   //parsing
+  //   // console.log(this.value)
+  //   let parsedCartLocal = JSON.parse(localStorage.cartLocal)
+  //   //filter to match id
+  //   let cartLocal = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier === identifier)
+    
+  //   const poppedCart = cartLocal.pop();
+    
+  //   poppedCart.qty = 4
+
+  //   const updatedCart= []
+  //   updatedCart.push(poppedCart)
+  //   console.log(updatedCart)
+
+    
+
+  // }
 
   //DELETE FROM CART
   deleteItem = (identifier) => {
-    const parsedCartLocal = JSON.parse(localStorage.cartLocal)
+    let parsedCartLocal = JSON.parse(localStorage.cartLocal)
     //filters out the id of the one we don't want
-    const newItemArray = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier !== identifier)
+    let cartLocal = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier !== identifier)
     // reset item in localstorage
-    localStorage.setItem('cartLocal', JSON.stringify(newItemArray))
+    localStorage.setItem('cartLocal', JSON.stringify(cartLocal))
   }
 
   render() {

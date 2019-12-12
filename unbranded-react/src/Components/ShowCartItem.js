@@ -11,11 +11,11 @@ class ShowCartItem extends Component {
 				<div> 
 					<h4> 
 
-						
+						{/* cart details */}
 						{this.props.item.color}     || 
 						{this.props.item.size}      ||
 						{Math.round(this.props.item.price) * 2}.00     ||
-						{this.props.item.qty}
+						{/*this.props.item.qty*/}
 						
 						<Button 
 							style={{backgroundColor: '#A10000'}}
