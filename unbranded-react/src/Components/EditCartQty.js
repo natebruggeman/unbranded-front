@@ -5,6 +5,7 @@ import { Input, Form, Button } from "semantic-ui-react"
 
 class EditCartQty extends Component {
 	render(){
+	console.log(this.props.item.identifier)
 		return (
 				<span> 
 					<Form>
@@ -14,7 +15,9 @@ class EditCartQty extends Component {
 							style={{width: "60px"}}
 						> 
 						</Input>
-						<Button>
+						<Button
+							onClick={this.props.editCartQty.bind(this, this.props.item.identifier)}
+							>
 							More!
 						</Button>
 					</Form>	

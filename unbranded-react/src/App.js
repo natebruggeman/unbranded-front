@@ -7,6 +7,7 @@ import './App.css';
 import Garments from "./Components/Garments"
 import Header from "./Components/Header"
 import ShowCart from "./Components/ShowCart"
+import EditCartQty from "./Components/EditCartQty"
 
 
 
@@ -62,6 +63,10 @@ class App extends Component {
     localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
   }
 
+  editCartQty = () => {
+    console.log('sup baby')
+  }
+
   //DELETE FROM CART
   deleteItem = (identifier) => {
     const parsedCartLocal = JSON.parse(localStorage.cartLocal)
@@ -77,7 +82,12 @@ class App extends Component {
 
         <Header />
 
-          <ShowCart cart={this.state.cart} deleteItem = {this.deleteItem}/>
+          <ShowCart 
+            cart={this.state.cart} 
+            deleteItem = {this.deleteItem}
+            editCartQty = {this.editCartQty}
+
+            />
 
         {this.state.garments.length > 0
           ?
