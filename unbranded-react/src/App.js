@@ -64,47 +64,11 @@ class App extends Component {
 
   //DELETE FROM CART
   deleteItem = (identifier) => {
-    // let deleteId = this.state.cart.filter(function(id){
-    //   return id.identifier == "identifier"
-    // })
-
-    console.log(identifier)
-    
-
-    console.log('~~~~~~~~~~~~~~~~~~');
-
-
     const parsedCartLocal = JSON.parse(localStorage.cartLocal)
-    // console.log(parsedCartLocal)
-
-
-
+    //filters out the id of the one we don't want
     const newItemArray = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier !== identifier)
-
-    console.log("this is parsed item", newItemArray);
-    // console.log('~~~~~~~~~~~~~~~~~~');
-
-    // // const newParsedCart = parsedCartLocal.pop([0])
-
-    // // console.log(newParsedCart)
-    // console.log('~~~~~~~~~~~~~~~~~~');
-    // console.log(parsedCartLocal)
-
-
-
-
-    // parsedCartLocal.filter(foo => foo === identifier)
-    //   console.log(foo)
-      
-    // removes from cart 
-    // console.log(this.state.cart.filter(function(id){
-    //   id === identifier
-    // })
-    // console.log(this.state.cart)
-    // this.state.cart.pop([0])
-    // localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
-    
-
+    // reset item in localstorage
+    localStorage.setItem('cartLocal', JSON.stringify(newItemArray))
   }
 
   render() {
