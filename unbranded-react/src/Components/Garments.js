@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Card, List, Button, i, Grid, Icon, Dropdown, Form } from "semantic-ui-react"
-import Header from './Header'
-import AddToCart from './AddToCartForm'
+// import Header from './Header'
+// import AddToCart from './AddToCartForm' 
 import GarmentItem from './GarmentItem'
 import PropTypes from 'prop-types';
 
@@ -10,13 +10,14 @@ class Garments extends Component {
 
 	render(){
 
-		console.log(this.props.garments)
 
 		return this.props.garments.map((garment) => (
 			<GarmentItem 
 				key={garment.id} 
 				garment={garment} 
-				addToCart={this.props.addToCart}/>
+				addToCart={this.props.addToCart}
+				// addQty= {this.props.addQty}
+				/>
 			)
 			
 		)
