@@ -6,7 +6,11 @@ import ShowCartItem from './ShowCartItem'
 class ShowCart extends Component {
 	render(){
 		return this.props.cart.map((item) => (
-			<ShowCartItem item= {item} />
+			<ShowCartItem 
+				item= {item} 
+				deleteItem = {this.props.deleteItem}// lifting from showCartItem
+
+			/>
 
 		))
 	}
@@ -14,16 +18,6 @@ class ShowCart extends Component {
 
 export default ShowCart
 
-
-
-
-
-
-
-				// {this.props.cart.length}
-				// {this.props.cart[i].color} {'       '} || {'    '}
-				// {this.props.cart[i].size} {'       '} || {'    '}
-				// {this.props.cart[i].qty} {'       '} || {'    '}
 
 
 

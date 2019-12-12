@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from "semantic-ui-react"
 
 
 
@@ -8,10 +9,18 @@ class ShowCartItem extends Component {
 		return (
 				<div> 
 					<h4> 
-						{this.props.item.color}     ||
+
+						
+						{this.props.item.color}     || 
 						{this.props.item.size}      ||
-						{this.props.item.price}     ||
+						{Math.round(this.props.item.price) * 2}.00     ||
 						{this.props.item.qty}
+						<Button 
+							style={{backgroundColor: '#A10000'}}
+							onClick={this.props.deleteItem.bind(this, this.props.item.identifier)}
+						>
+							X
+						</Button>
 					</h4>
 				</div>
 		)

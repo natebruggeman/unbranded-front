@@ -49,11 +49,11 @@ class App extends Component {
   componentDidMount(){
     this.getGarments()
   }
-  // these objects are what we get from GarmentItem
+  // these args are what we get from GarmentItem
   addToCart = (gtin, sizeName, colorName, piecePrice) => {
     // pushing to cart 
     console.log(this.state.cart);
-    this.state.cart.push({'identifer': gtin,
+    this.state.cart.push({'identifier': gtin,
                           'size': sizeName,
                           'color': colorName,
                           'price': piecePrice,
@@ -61,14 +61,43 @@ class App extends Component {
     //local storage turns everything into an object. You have to stringify.
     localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
   }
-  // console.log(this.state.cart);
+
+  //DELETE FROM CART
+  deleteItem = (identifier) => {
+    // let deleteId = this.state.cart.filter(function(id){
+    //   return id.identifier == "identifier"
+    // })
+
+    console.log(identifier)
+    console.log('~~~~~~~~~~~~~~~~~~');
+    console.log(localStorage)
+    console.log('~~~~~~~~~~~~~~~~~~');
+    console.log(localStorage.cartLocal)
+
+    const parsedCartLocal = JSON.parse(localStorage.cartLocal)
+    console.log(parsedCartLocal)
+
+    // parsedCartLocal.filter(foo => foo === identifier)
+    //   console.log(foo)
+      
+    // removes from cart 
+    // console.log(this.state.cart.filter(function(id){
+    //   id === identifier
+    // })
+    // console.log(this.state.cart)
+    // this.state.cart.pop([0])
+    // localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
+    
+
+  }
+
   render() {
     return (
       <div>
 
         <Header />
 
-          <ShowCart cart={this.state.cart}/>
+          <ShowCart cart={this.state.cart} deleteItem = {this.deleteItem}/>
 
         {this.state.garments.length > 0
           ?

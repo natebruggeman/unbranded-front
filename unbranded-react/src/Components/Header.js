@@ -9,7 +9,7 @@ function Header() {
 			<h1>
 				<Icon 
 					name="big shopping cart" 
-					// onClick= {console.log('hey cutie')}
+					onClick= {console.log('future use')}
 				/>
 
 			</h1>
