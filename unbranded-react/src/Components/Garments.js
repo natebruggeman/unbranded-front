@@ -16,7 +16,7 @@ class Garments extends Component {
 				key={garment.id} 
 				garment={garment} 
 				addToCart={this.props.addToCart}
-				// addQty= {this.props.addQty}
+				
 				/>
 			)
 			

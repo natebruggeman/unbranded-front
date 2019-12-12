@@ -14,7 +14,7 @@ import ShowCart from "./Components/ShowCart"
 class App extends Component {
   constructor(){
     super();
-
+    //storing cart in client not in DB!! 
     let totalCart = localStorage.getItem('cartLocal')
     console.log(totalCart)
     if (totalCart == null){
@@ -58,6 +58,7 @@ class App extends Component {
                           'color': colorName,
                           'price': piecePrice,
                            'qty': 1} )
+    //local storage turns everything into an object. You have to stringify.
     localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
   }
   // console.log(this.state.cart);

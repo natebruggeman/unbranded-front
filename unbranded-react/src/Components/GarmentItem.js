@@ -23,7 +23,8 @@ class GarmentItem extends Component {
   						<br/>
 						<Button 
 							style={{marginBottom: '8px'}}
-							onClick={this.props.addToCart.bind(this, gtin, sizeName, colorName, piecePrice)} //climbing the ladder
+							onClick={this.props.addToCart.bind(this, gtin, sizeName, colorName, piecePrice)} 
+									//climbing the ladder
 							value="add to cart"
 							animated='fade'
 							>
