@@ -69,13 +69,29 @@ class App extends Component {
     // })
 
     console.log(identifier)
+    
+
     console.log('~~~~~~~~~~~~~~~~~~');
-    console.log(localStorage)
-    console.log('~~~~~~~~~~~~~~~~~~');
-    console.log(localStorage.cartLocal)
+
 
     const parsedCartLocal = JSON.parse(localStorage.cartLocal)
-    console.log(parsedCartLocal)
+    // console.log(parsedCartLocal)
+
+
+
+    const newItemArray = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier !== identifier)
+
+    console.log("this is parsed item", newItemArray);
+    // console.log('~~~~~~~~~~~~~~~~~~');
+
+    // // const newParsedCart = parsedCartLocal.pop([0])
+
+    // // console.log(newParsedCart)
+    // console.log('~~~~~~~~~~~~~~~~~~');
+    // console.log(parsedCartLocal)
+
+
+
 
     // parsedCartLocal.filter(foo => foo === identifier)
     //   console.log(foo)
