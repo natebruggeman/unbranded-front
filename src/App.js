@@ -62,6 +62,7 @@ class App extends Component {
     //this is the start of cartLocal
     //local storage turns everything into an object. You have to stringify.
     localStorage.setItem('cartLocal', JSON.stringify(this.state.cart))
+    window.location.reload()
   }
 
   // editing quantity in cart 
@@ -86,7 +87,9 @@ class App extends Component {
 
   //DELETE FROM CART
   deleteItem = (identifier) => {
+    window.location.reload()
     let parsedCartLocal = JSON.parse(localStorage.cartLocal)
+
     //filters out the id of the one we don't want
     let cartLocal = parsedCartLocal.filter(parsedCartLocal => parsedCartLocal.identifier !== identifier)
     // reset item in localstorage

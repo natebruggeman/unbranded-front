@@ -20,8 +20,10 @@ class ShowCartItem extends Component {
 						<Button 
 							style={{backgroundColor: '#A10000'}}
 							onClick={this.props.deleteItem.bind(this, this.props.item.identifier)}
+							
 						>
 							X
+
 						</Button>
 						
 					</h4>
